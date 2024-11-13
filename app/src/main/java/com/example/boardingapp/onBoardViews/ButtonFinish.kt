@@ -10,9 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.boardingapp.dataStore.StoreBoarding
 
 @Composable
-fun ButtonFinish(currentPage: Int, navController: NavController) {
+fun ButtonFinish(currentPage: Int, navController: NavController, store: StoreBoarding) {
     Row(
         modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp),
         horizontalArrangement = if (currentPage != 2) Arrangement.SpaceBetween else Arrangement.Center

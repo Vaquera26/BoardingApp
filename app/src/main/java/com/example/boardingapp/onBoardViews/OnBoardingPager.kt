@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.boardingapp.data.PageData
+import com.example.boardingapp.dataStore.StoreBoarding
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
@@ -23,7 +24,8 @@ fun OnBoardingPager(
     item: List<PageData>,
     pagerState: PagerState,
     modifier: Modifier,
-    navController: NavController
+    navController: NavController,
+    store : StoreBoarding
 ) {
     Box(modifier = Modifier){
         Column (
@@ -57,7 +59,7 @@ fun OnBoardingPager(
             PagerIndicator(item.size, pagerState.currentPage)
         }
         Box(modifier = Modifier.align(Alignment.BottomCenter)){
-            ButtonFinish(pagerState.currentPage, navController)
+            ButtonFinish(pagerState.currentPage, navController, store)
         }
     }
 }
