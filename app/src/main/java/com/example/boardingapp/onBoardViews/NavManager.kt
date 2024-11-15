@@ -16,12 +16,15 @@ fun NavManager() {
     val store = dataStore.getStoreBoarding.collectAsState(initial = false)
 
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = if (store.value == true) "home" else "onBoarding") {
+    NavHost(navController = navController, startDestination = "Splash") {
         composable(route = "onBoarding") {
             MainOnBoarding(navController, dataStore)
         }
         composable(route = "home") {
             HomeView(navController)
+        }
+        composable(route = "Splash") {
+            SplashScreen(navController, store.value)
         }
     }
 }
